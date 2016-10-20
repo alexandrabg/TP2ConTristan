@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "Game.h"
+#include "Character.h"
 
 using namespace sf;
 
@@ -18,7 +18,9 @@ private:
 public:
 	Game();
 	int run();
-
-	const int LARGEUR = 640;
-	const int HAUTEUR = 480;
+	Character hero;
+	//Sprite heroSprite;
+	//Texture heroTexture;
+	static const int LARGEUR = 640;
+	static const int HAUTEUR = 480;
 };

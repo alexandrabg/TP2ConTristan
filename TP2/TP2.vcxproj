@@ -86,11 +86,36 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Collectible.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameLevel.cpp" />
+    <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Plateform.cpp" />
+    <ClCompile Include="Score.cpp" />
+    <ClCompile Include="Spawner.cpp" />
+    <ClCompile Include="SpriteMaker.cpp" />
+    <ClCompile Include="StaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Collectible.h" />
+    <ClInclude Include="Constantes.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameLevel.h" />
+    <ClInclude Include="Hero.h" />
+    <ClInclude Include="Plateform.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Score.h" />
+    <ClInclude Include="Spawner.h" />
+    <ClInclude Include="SpriteMaker.h" />
+    <ClInclude Include="StaticObject.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\hero.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

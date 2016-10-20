@@ -1,0 +1,27 @@
+﻿  C:\LibrairiesProgrammation\SFML-2.4.0\bin\openal32.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-audio-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-audio-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-graphics-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-graphics-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-network-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-network-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-system-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-system-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-d-2.dll
+  11 fichier(s) copié(s)
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\openal32.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-audio-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-audio-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-graphics-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-graphics-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-network-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-network-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-system-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-system-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-d-2.dll
+  11 fichier(s) copié(s)
+  Character.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2\tp2\character.cpp(8): warning C4305: 'argument' : troncation de 'double' à 'float'
+  TP2.vcxproj -> C:\Users\Alexandra\Desktop\École\Session A2016\Prog jeu 3\TP2\Debug\TP2.exe

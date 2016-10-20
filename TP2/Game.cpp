@@ -21,15 +21,18 @@ void Game::processInputs()
 			this->mainWindow.close();
 		}
 	}
+	hero.Move();
 }
 
 void Game::update()
 {
+	hero.GetPositionHero();
 }
 
 void Game::render()
 {
 	this->mainWindow.clear();
+	mainWindow.draw(hero.GetSprite());
 
 	this->mainWindow.display();
 
