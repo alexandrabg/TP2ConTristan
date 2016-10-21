@@ -20,6 +20,7 @@ public:
 	int run();
 	Character hero;
 	Sprite BG;
+	Texture tBG;
 	//Sprite heroSprite;
 	//Texture heroTexture;
 	static const int LARGEUR = 640;

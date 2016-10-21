@@ -8,6 +8,10 @@ Game::Game()
 void Game::init()
 {
 	this->mainWindow.setVerticalSyncEnabled(true);
+	tBG.loadFromFile("Assets\\TikiRossBG.png");
+	BG.setTexture(tBG);
+	BG.setPosition(0, 0);
+	BG.setOrigin(0, 0);
 }
 
 void Game::processInputs()
@@ -27,11 +31,15 @@ void Game::processInputs()
 void Game::update()
 {
 	hero.GetPositionHero();
+	BG.setPosition(BG.getPosition() + Vector2f(-0.5, 0));
+	if (BG.getPosition().x - LARGEUR < -2000)
+		BG.setPosition(0, 0);
 }
 
 void Game::render()
 {
 	this->mainWindow.clear();
+	mainWindow.draw(BG);
 	mainWindow.draw(hero.GetSprite());
 
 	this->mainWindow.display();

@@ -1,4 +1,4 @@
-﻿La génération a démarré 10/20/2016 10:09:35 PM.
+﻿La génération a démarré 10/21/2016 3:13:15 PM.
      1>Projet "D:\Programmation\TP2ConTristan\TP2\TP2.vcxproj" sur le nœud 2 (Build cible(s)).
      1>PreBuildEvent:
          xcopy /Y /C /E  "D:\Programmation\Librairies\SFML-2.4.0\bin" "..\Debug\"
@@ -28,10 +28,25 @@
          D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-window-2.dll
          D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-window-d-2.dll
          11 File(s) copied
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
+         Game.cpp
        Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programmation\TP2ConTristan\Debug\TP2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" "sfml-system-d.lib" "sfml-main-d.lib" "sfml-graphics-d.lib" "sfml-audio-d.lib" "sfml-network-d.lib" "sfml-window-d.lib" openal32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Programmation\TP2ConTristan\Debug\TP2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programmation\TP2ConTristan\Debug\TP2.lib" /MACHINE:X86 Debug\Character.obj
+         Debug\Collectible.obj
+         Debug\Enemy.obj
+         Debug\Game.obj
+         Debug\GameLevel.obj
+         Debug\Hero.obj
+         Debug\Main.obj
+         Debug\Plateform.obj
+         Debug\Score.obj
+         Debug\Spawner.obj
+         Debug\SpriteMaker.obj
+         Debug\StaticObject.obj
          TP2.vcxproj -> D:\Programmation\TP2ConTristan\Debug\TP2.exe
      1>Génération du projet "D:\Programmation\TP2ConTristan\TP2\TP2.vcxproj" terminée (Build cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.22
+Temps écoulé 00:00:00.57
