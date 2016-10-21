@@ -19,6 +19,7 @@ public:
 	Game();
 	int run();
 	Character hero;
+	Sprite BG;
 	//Sprite heroSprite;
 	//Texture heroTexture;
 	static const int LARGEUR = 640;

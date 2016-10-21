@@ -116,6 +116,7 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\hero.png" />
+    <Image Include="Assets\TikiRossBG.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
