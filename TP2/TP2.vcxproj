@@ -97,7 +97,9 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="SpriteMaker.cpp" />
+    <ClCompile Include="StandartPlateforme.cpp" />
     <ClCompile Include="StaticObject.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
@@ -112,10 +114,14 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
     <ClInclude Include="Score.h" />
     <ClInclude Include="Spawner.h" />
     <ClInclude Include="SpriteMaker.h" />
+    <ClInclude Include="StandartPlateforme.h" />
     <ClInclude Include="StaticObject.h" />
+    <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\hero.png" />
+    <Image Include="Assets\StandartPlateforme.png" />
+    <Image Include="Assets\StandartPlateforme2.png" />
     <Image Include="Assets\TikiRossBG.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

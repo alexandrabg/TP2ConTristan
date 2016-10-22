@@ -1,4 +1,4 @@
-﻿La génération a démarré 10/21/2016 3:13:15 PM.
+﻿La génération a démarré 10/21/2016 9:23:42 PM.
      1>Projet "D:\Programmation\TP2ConTristan\TP2\TP2.vcxproj" sur le nœud 2 (Build cible(s)).
      1>PreBuildEvent:
          xcopy /Y /C /E  "D:\Programmation\Librairies\SFML-2.4.0\bin" "..\Debug\"
@@ -43,10 +43,12 @@
          Debug\Score.obj
          Debug\Spawner.obj
          Debug\SpriteMaker.obj
+         Debug\StandartPlateforme.obj
          Debug\StaticObject.obj
+         Debug\TextureManager.obj
          TP2.vcxproj -> D:\Programmation\TP2ConTristan\Debug\TP2.exe
      1>Génération du projet "D:\Programmation\TP2ConTristan\TP2\TP2.vcxproj" terminée (Build cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.57
+Temps écoulé 00:00:00.65
