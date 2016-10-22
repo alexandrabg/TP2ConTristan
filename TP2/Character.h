@@ -5,20 +5,16 @@
 
 using namespace sf;
 
-class Character
-	//public SpriteMaker
+class Character : 
+		public Sprite
 {
 public:
 	Character();
-	Texture heroTexture;
-	Sprite heroSprite;
-	Sprite GetSprite() const;
-	Vector2f GetPositionHero() const;
-	void Move();
 	~Character();
 
 private:
-	Vector2f positionHero;
+protected:
+	bool isOnSolidGround;
 
 };
 

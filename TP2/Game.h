@@ -1,12 +1,22 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "Character.h"
+#include "Hero.h"
+#include "TextureManager.h"
+#include "StaticObject.h"
+#include "StandartPlateforme.h"
 
 using namespace sf;
 
 class Game
 {
+public:
+	Game();
+	int run();
+
+	static const int LARGEUR = 640;
+	static const int HAUTEUR = 480;
+
 private:
 	RenderWindow mainWindow;
 
@@ -15,13 +25,10 @@ private:
 	void update();
 	void render();
 
-public:
-	Game();
-	int run();
-	Character hero;
+	vector<StaticObject*> staticObjects;
+	TextureManager textureManager;
+	int frameCounter;
+	Hero* hero;
 	Sprite BG;
-	//Sprite heroSprite;
-	//Texture heroTexture;
-	static const int LARGEUR = 640;
-	static const int HAUTEUR = 480;
+	Texture tBG;
 };
