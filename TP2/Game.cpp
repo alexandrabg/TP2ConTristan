@@ -38,6 +38,10 @@ void Game::processInputs()
 	{
 		hero->move(-1, 0);
 	}
+	while (Keyboard::isKeyPressed(Keyboard::Space))
+	{
+		hero->Jump();
+	}
 }
 
 void Game::update()
