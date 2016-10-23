@@ -10,6 +10,7 @@ Game::Game() : frameCounter(0)
 
 void Game::init()
 {
+	mainView = new View(FloatRect(0, 0, LARGEUR, HAUTEUR));
 	this->mainWindow.setVerticalSyncEnabled(true);
 	tBG.loadFromFile("Assets\\TikiRossBG.png");
 	BG.setTexture(tBG);
@@ -32,13 +33,15 @@ void Game::processInputs()
 
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
+		mainView->move(hero->getSpeed(), 0);
 		hero->move(1, 0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::A))
 	{
+		mainView->move(-(hero->getSpeed()), 0);
 		hero->move(-1, 0);
 	}
-	while (Keyboard::isKeyPressed(Keyboard::Space))
+	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
 		hero->Jump();
 	}
@@ -46,27 +49,25 @@ void Game::processInputs()
 
 void Game::update()
 {
-	hero->update();
-
-	BG.setPosition(BG.getPosition() + Vector2f(-0.5, 0));
-	if (BG.getPosition().x - LARGEUR < -2000)
-		BG.setPosition(0, 0);
 
 	hero->setIsOnSolidGround(false);
 	for (vector<StaticObject*>::iterator it = staticObjects.begin() ; it != staticObjects.end(); it++)
 	{
-		if (hero->getPosition().y + hero->getTextureRect().height * 0.2f - 13 == (*it)->getPosition().y
-			&& hero->getPosition().x + hero->getTextureRect().width * 0.2f > (*it)->getPosition().x
+		float pos = hero->getPosition().y + hero->getTextureRect().height * 0.2f;
+		if (hero->getPosition().y + hero->getTextureRect().height * 0.2f > (*it)->getPosition().y - 2 && hero->getPosition().y + hero->getTextureRect().height * 0.2f < (*it)->getPosition().y
+			&& hero->getPosition().x + hero->getTextureRect().width * 0.2f >(*it)->getPosition().x
 			&& hero->getPosition().x < (*it)->getPosition().x + (*it)->getTextureRect().width)
 		{
 			hero->setIsOnSolidGround(true);
 		}
 	}
+	hero->update();
 }
 
 void Game::render()
 {
 	this->mainWindow.clear();
+	mainWindow.setView(*mainView);
 	mainWindow.draw(BG);
 	mainWindow.draw(*hero);
 	mainWindow.draw(*staticObjects[0]);
@@ -85,6 +86,13 @@ int Game::run()
 		this->processInputs();
 		this->update();
 		this->render();		
+	}
+
+	delete hero;
+	delete mainView;
+	for (vector<StaticObject*>::iterator it = staticObjects.begin(); it != staticObjects.end(); it++)
+	{
+		delete *it;
 	}
 
 	return EXIT_SUCCESS;

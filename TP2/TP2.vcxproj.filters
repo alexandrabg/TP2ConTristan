@@ -118,5 +118,8 @@
     <Image Include="Assets\StandartPlateforme2.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
+    <Image Include="Assets\hero1.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

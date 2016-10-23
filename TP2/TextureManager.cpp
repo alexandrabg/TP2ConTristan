@@ -4,7 +4,7 @@
 
 TextureManager::TextureManager()
 {
-	heroSpriteSheet.loadFromFile("Assets\\hero.png");
+	heroSpriteSheet.loadFromFile("Assets\\hero1.png");
 	plateformeSS.loadFromFile("Assets\\StandartPlateforme.png");
 	plateformeSS2.loadFromFile("Assets\\StandartPlateforme2.png");
 }

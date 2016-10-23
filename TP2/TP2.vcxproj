@@ -120,6 +120,7 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\hero.png" />
+    <Image Include="Assets\hero1.png" />
     <Image Include="Assets\StandartPlateforme.png" />
     <Image Include="Assets\StandartPlateforme2.png" />
     <Image Include="Assets\TikiRossBG.png" />

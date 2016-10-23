@@ -13,8 +13,11 @@ public:
 	void Jump();
 	Vector2f getPositionHero() const;
 	void setPositionHero(Vector2f);
+	float getSpeed();
 
 private:
+	int jumpingFrameCounter;
+	bool isJumping;
 	float speed;
 	float startingHeight;
 	float endingHeight;

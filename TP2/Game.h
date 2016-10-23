@@ -25,6 +25,7 @@ private:
 	void update();
 	void render();
 
+	View* mainView;
 	vector<StaticObject*> staticObjects;
 	TextureManager textureManager;
 	int frameCounter;
