@@ -2,7 +2,7 @@
 #include <math.h>
 
 Hero::Hero(Texture& newTexture) :
-Character(), speed(2), isJumping(false), jumpingFrameCounter(999)
+Character(), speed(2), isJumping(false), isStillJumping(false), jumpingFrameCounter(999), jumpingSpeed(3), fallingSpeed(3), jumpHeight(25)
 {
 	this->setTexture(newTexture);
 	this->setScale(0.2f, 0.2f);
@@ -19,18 +19,25 @@ void Hero::move(float offsetX, float offsetY)
 
 void Hero::update()
 {
-	if (!isOnSolidGround && ( !isJumping || jumpingFrameCounter > 60) )
+	if (!isOnSolidGround && ( !isJumping || jumpingFrameCounter > jumpHeight) )
 	{
-		Character::move(0, 2);
+		Character::move(0, fallingSpeed);
 	}
-	if (isJumping)
+	if (isJumping && isStillJumping)
 	{
-		if (jumpingFrameCounter < 60)
+		if (jumpingFrameCounter < jumpHeight)
 		{
-			this->move(0, -2);
+			this->move(0, -jumpingSpeed);
 		}
+		else
+			isStillJumping = false;
 		jumpingFrameCounter++;
 		isJumping = false;
+	}
+	else if (!isJumping && isStillJumping)
+	{
+		isStillJumping = false;
+		jumpingFrameCounter = 999;
 	}
 }
 
@@ -53,9 +60,11 @@ void Hero::setIsOnSolidGround(bool isIt)
 
 void Hero::Jump()
 {
+
 	if (isOnSolidGround)
 	{
 		jumpingFrameCounter = 1;
+		isStillJumping = true;
 	}
 	isJumping = true;
 }

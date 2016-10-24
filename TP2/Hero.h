@@ -16,8 +16,12 @@ public:
 	float getSpeed();
 
 private:
+	int jumpHeight;
+	float jumpingSpeed;
+	float fallingSpeed;
 	int jumpingFrameCounter;
 	bool isJumping;
+	bool isStillJumping;
 	float speed;
 	float startingHeight;
 	float endingHeight;

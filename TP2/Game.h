@@ -5,6 +5,7 @@
 #include "TextureManager.h"
 #include "StaticObject.h"
 #include "StandartPlateforme.h"
+#include "GameLevel.h"
 
 using namespace sf;
 
@@ -25,11 +26,8 @@ private:
 	void update();
 	void render();
 
-	View* mainView;
-	vector<StaticObject*> staticObjects;
+	GameLevel gameLevel;
 	TextureManager textureManager;
 	int frameCounter;
 	Hero* hero;
-	Sprite BG;
-	Texture tBG;
 };

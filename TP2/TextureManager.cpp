@@ -4,6 +4,7 @@
 
 TextureManager::TextureManager()
 {
+	bgTexture.loadFromFile("Assets\\TikiRosBG.png");
 	heroSpriteSheet.loadFromFile("Assets\\hero1.png");
 	plateformeSS.loadFromFile("Assets\\StandartPlateforme.png");
 	plateformeSS2.loadFromFile("Assets\\StandartPlateforme2.png");
@@ -27,4 +28,9 @@ Texture& TextureManager::getPlateformeSS()
 Texture& TextureManager::getPlateformeSS2()
 {
 	return plateformeSS2;
+}
+
+Texture& TextureManager::getBgTexture()
+{
+	return bgTexture;
 }
