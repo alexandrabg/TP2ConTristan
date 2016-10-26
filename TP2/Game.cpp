@@ -5,7 +5,7 @@
 Game::Game() : frameCounter(0)
 {
 	this->mainWindow.create(VideoMode(LARGEUR, HAUTEUR, 32), "Projet SFML C++");
-	hero = new Hero(textureManager.getHeroSpriteSheet());
+	hero = new Hero(textureManager.getHeroSpriteSheet(), IntRect(45,335,127,12));
 }
 
 void Game::init()
@@ -43,17 +43,17 @@ void Game::processInputs()
 
 void Game::update()
 {
-
 	hero->setIsOnSolidGround(false);
 	for (vector<StaticObject*>::iterator it = (*gameLevel.getStaticObjects()).begin(); it != (*gameLevel.getStaticObjects()).end(); ++it)
 	{
-		if (hero->getPosition().y + hero->getTextureRect().height * 0.2f > (*it)->getPosition().y - 3 && hero->getPosition().y + hero->getTextureRect().height * 0.2f < (*it)->getPosition().y
-			&& hero->getPosition().x + hero->getTextureRect().width * 0.2f >(*it)->getPosition().x
-			&& hero->getPosition().x < (*it)->getPosition().x + (*it)->getTextureRect().width
-			&& (*it)->getIsSolid())
+		if ((*it)->getIsSolid()
+			&& hero->getPosition().y + hero->getTextureRect().height * 0.2f >= (*it)->getPosition().y - 2 
+			&& hero->getPosition().y + hero->getTextureRect().height * 0.2f < (*it)->getPosition().y
+			&& hero->getPosition().x + hero->getFootSurface().left * 0.2f + hero->getFootSurface().width /* hero->getTextureRect().width*/ * 0.2f >(*it)->getPosition().x
+			&& hero->getPosition().x + hero->getFootSurface().left * 0.2f < (*it)->getPosition().x + (*it)->getTextureRect().width)
 		{
 			hero->setIsOnSolidGround(true);
-		//	hero->setPosition(hero->getPosition().x, (*it)->getPosition().y - hero->getTextureRect().height);
+			//hero->setPosition(hero->getPosition().x, (*it)->getPosition().y - hero->getTextureRect().height);
 		}
 	}
 	hero->update();
@@ -63,11 +63,11 @@ void Game::render()
 {
 	this->mainWindow.clear();
 	mainWindow.setView(*gameLevel.getMainView());
-	mainWindow.draw(*hero);
 	for (vector<StaticObject*>::iterator it = (*gameLevel.getStaticObjects()).begin(); it != (*gameLevel.getStaticObjects()).end(); ++it)
 	{
 		mainWindow.draw(**it);
 	}
+	mainWindow.draw(*hero);
 
 	this->mainWindow.display();
 
@@ -86,10 +86,6 @@ int Game::run()
 	}
 
 	delete hero;
-	for (vector<StaticObject*>::iterator it = (*gameLevel.getStaticObjects()).begin(); it != (*gameLevel.getStaticObjects()).end(); it++)
-	{
-		delete *it;
-	}
 
 	return EXIT_SUCCESS;
 }

@@ -4,7 +4,7 @@
 
 TextureManager::TextureManager()
 {
-	bgTexture.loadFromFile("Assets\\TikiRosBG.png");
+	bgTexture.loadFromFile("Assets\\TikiRossBG.png");
 	heroSpriteSheet.loadFromFile("Assets\\hero1.png");
 	plateformeSS.loadFromFile("Assets\\StandartPlateforme.png");
 	plateformeSS2.loadFromFile("Assets\\StandartPlateforme2.png");

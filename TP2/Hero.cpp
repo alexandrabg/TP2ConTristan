@@ -1,8 +1,8 @@
 #include "Hero.h"
 #include <math.h>
 
-Hero::Hero(Texture& newTexture) :
-Character(), speed(2), isJumping(false), isStillJumping(false), jumpingFrameCounter(999), jumpingSpeed(3), fallingSpeed(3), jumpHeight(25)
+Hero::Hero(Texture& newTexture, IntRect foot) :
+Character(), speed(2), isJumping(false), isStillJumping(false), jumpingFrameCounter(999), jumpingSpeed(3), fallingSpeed(3), jumpHeight(25), footSurface(foot)
 {
 	this->setTexture(newTexture);
 	this->setScale(0.2f, 0.2f);
@@ -72,4 +72,9 @@ void Hero::Jump()
 float Hero::getSpeed()
 {
 	return speed;
+}
+
+IntRect Hero::getFootSurface()
+{
+	return footSurface;
 }

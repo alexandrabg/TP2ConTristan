@@ -17,8 +17,8 @@ public:
 	vector<StaticObject*>* getStaticObjects();
 
 private:
-
-	vector<StaticObject*>* staticObjects;
+	vector<StaticObject*> staticObjects;
+	vector<StaticObject*>* pStaticObjects;
 	TextureManager textureManager;
 
 	View* mainView;

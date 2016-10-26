@@ -4,7 +4,7 @@ class Hero :
 	public Character
 {
 public:
-	Hero(Texture&);
+	Hero(Texture&, IntRect foot);
 	~Hero();
 	
 	void move(float offsetX, float offsetY);
@@ -14,8 +14,10 @@ public:
 	Vector2f getPositionHero() const;
 	void setPositionHero(Vector2f);
 	float getSpeed();
+	IntRect getFootSurface();
 
 private:
+	IntRect footSurface;
 	int jumpHeight;
 	float jumpingSpeed;
 	float fallingSpeed;
