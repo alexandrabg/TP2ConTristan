@@ -122,4 +122,7 @@
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\Platforms.txt" />
+  </ItemGroup>
 </Project>

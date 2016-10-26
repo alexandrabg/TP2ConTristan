@@ -125,6 +125,9 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
     <Image Include="Assets\StandartPlateforme2.png" />
     <Image Include="Assets\TikiRossBG.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\Platforms.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

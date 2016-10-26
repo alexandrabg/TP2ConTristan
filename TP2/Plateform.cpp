@@ -4,7 +4,6 @@
 Plateform::Plateform()
 {
 	tabPlateforms[NB_PLATFORMS];
-
 }
 
 
