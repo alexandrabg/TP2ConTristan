@@ -6,6 +6,8 @@
 #include "StaticObject.h"
 #include "StandartPlateforme.h"
 #include "GameLevel.h"
+#include "BirdEnemy.h"
+#include "SnailEnemy.h"
 
 using namespace sf;
 
@@ -25,9 +27,11 @@ private:
 	void processInputs();
 	void update();
 	void render();
-
+	BirdEnemy* bird;
+	SnailEnemy* snail;
 	GameLevel gameLevel;
 	TextureManager textureManager;
+
 	int frameCounter;
 	Hero* hero;
 };

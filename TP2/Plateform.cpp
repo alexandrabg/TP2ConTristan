@@ -4,6 +4,7 @@
 Plateform::Plateform()
 {
 	tabPlateforms[NB_PLATFORMS];
+	tabPlatformLengths[NB_PLATFORMS];
 }
 
 
@@ -13,7 +14,7 @@ Plateform::~Plateform()
 
 void Plateform::OpenFile(ifstream filename)
 {
-	filename.open("Platforms.txt");
+	filename.open("Assets\\Platforms.txt");
 	if (!filename)
 	{
 		cout << "Cannot open file" << endl;
@@ -31,11 +32,8 @@ void Plateform::OpenFile(ifstream filename)
 	}
 }
 
-Vector2f Plateform::ParseCoordinates(string coordinate)
+Vector3f Plateform::ParseCoordinates(string coordinate)
 {
-	coordinate.erase(0, 1);
-	coordinate.erase(strlen(coordinate.c_str()) - 1, 1);
-
 	for (size_t i = 0; i < strlen(coordinate.c_str()); i++)
 	{
 		if (coordinate[i] == ',')
@@ -48,6 +46,8 @@ Vector2f Plateform::ParseCoordinates(string coordinate)
 	platformCoordinate.x = number;
 	ss >> number;
 	platformCoordinate.y = number;
+	ss >> number;
+	platformCoordinate.z = number;
 
 	return platformCoordinate;
 }

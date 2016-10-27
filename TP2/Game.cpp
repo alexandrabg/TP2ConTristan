@@ -6,6 +6,8 @@ Game::Game() : frameCounter(0)
 {
 	this->mainWindow.create(VideoMode(LARGEUR, HAUTEUR, 32), "Projet SFML C++");
 	hero = new Hero(textureManager.getHeroSpriteSheet(), IntRect(45,335,127,12));
+	bird = new BirdEnemy(textureManager.getBirdTexture());
+	snail = new SnailEnemy(textureManager.getSnailTexture());
 }
 
 void Game::init()
@@ -56,6 +58,8 @@ void Game::update()
 			//hero->setPosition(hero->getPosition().x, (*it)->getPosition().y - hero->getTextureRect().height);
 		}
 	}
+	bird->Move(1);
+	snail->Move(1);
 	hero->update();
 }
 
@@ -68,7 +72,8 @@ void Game::render()
 		mainWindow.draw(**it);
 	}
 	mainWindow.draw(*hero);
-
+	mainWindow.draw(*bird);
+	mainWindow.draw(*snail);
 	this->mainWindow.display();
 
 }
@@ -86,6 +91,7 @@ int Game::run()
 	}
 
 	delete hero;
-
+	delete bird;
+	delete snail;
 	return EXIT_SUCCESS;
 }

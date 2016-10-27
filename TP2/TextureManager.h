@@ -13,12 +13,21 @@ public:
 	Texture& getHeroSpriteSheet();
 	Texture& getPlateformeSS();
 	Texture& getPlateformeSS2();
-	
+	Texture& getBirdTexture();
+	Texture& getSnailTexture();
+	Texture& getManTexture();
+	Texture& getMtnDewTexture();
+	Texture& getSaleTexture();
 
 private:
 	Texture bgTexture;
 	Texture heroSpriteSheet;
 	Texture plateformeSS;
 	Texture plateformeSS2;
+	Texture birdTexture;
+	Texture snailTexture;
+	Texture manTexture;
+	Texture mtnDewTexture;
+	Texture saleTexture;
 };
 

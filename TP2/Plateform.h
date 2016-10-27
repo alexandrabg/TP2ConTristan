@@ -13,10 +13,12 @@ public:
 	~Plateform();
 
 private:
-	vector<Vector2f*> tabPlateforms;
+	vector<Vector3f*> tabPlateforms;
+	vector<int> tabPlatformLengths;
 	void OpenFile(ifstream filename);
-	Vector2f ParseCoordinates(string coordinate);
-	Vector2f platformCoordinate;
-	Vector2f coordinateNumber;
+	Vector3f ParseCoordinates(string coordinate);
+	Vector3f platformCoordinate;
+	Vector3f coordinateNumber;
+	int longueur;
 	int count = 0;
 };
