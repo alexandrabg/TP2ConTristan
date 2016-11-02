@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "TextureManager.h"
 
 class Plateform :
 	public StaticObject
@@ -14,11 +15,12 @@ public:
 
 private:
 	vector<Vector3f*> tabPlateforms;
-	vector<int> tabPlatformLengths;
+	vector<StaticObject*> vectPlateforms;
 	void OpenFile(ifstream filename);
-	Vector3f ParseCoordinates(string coordinate);
-	Vector3f platformCoordinate;
-	Vector3f coordinateNumber;
+	Vector2f ParseCoordinates(string coordinate);
+	Vector2f platformCoordinate;
+	Vector2f coordinateNumber;
+	TextureManager textureManager;
 	int longueur;
 	int count = 0;
 };

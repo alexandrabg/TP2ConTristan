@@ -1,10 +1,11 @@
 #include "Plateform.h"
+#include "StandartPlateforme.h"
 
 
 Plateform::Plateform()
 {
 	tabPlateforms[NB_PLATFORMS];
-	tabPlatformLengths[NB_PLATFORMS];
+	//tabPlatformLengths[NB_PLATFORMS];
 }
 
 
@@ -26,13 +27,12 @@ void Plateform::OpenFile(ifstream filename)
 		while (filename >> coordinate)
 		{
 			coordinateNumber = ParseCoordinates(coordinate);
-			tabPlateforms[count] = &coordinateNumber;
-			count++;
+			vectPlateforms.push_back(new StandartPlateforme(textureManager.getPlateformeSS2(), coordinateNumber));
 		}
 	}
 }
 
-Vector3f Plateform::ParseCoordinates(string coordinate)
+Vector2f Plateform::ParseCoordinates(string coordinate)
 {
 	for (size_t i = 0; i < strlen(coordinate.c_str()); i++)
 	{
@@ -46,8 +46,8 @@ Vector3f Plateform::ParseCoordinates(string coordinate)
 	platformCoordinate.x = number;
 	ss >> number;
 	platformCoordinate.y = number;
-	ss >> number;
-	platformCoordinate.z = number;
+	//ss >> number;
+	//platformCoordinate.z = number;
 
 	return platformCoordinate;
 }

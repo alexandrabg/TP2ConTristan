@@ -8,6 +8,7 @@
 #include "GameLevel.h"
 #include "BirdEnemy.h"
 #include "SnailEnemy.h"
+#include "FatManEnemy.h"
 
 using namespace sf;
 
@@ -29,6 +30,7 @@ private:
 	void render();
 	BirdEnemy* bird;
 	SnailEnemy* snail;
+	FatManEnemy* man;
 	GameLevel gameLevel;
 	TextureManager textureManager;
 

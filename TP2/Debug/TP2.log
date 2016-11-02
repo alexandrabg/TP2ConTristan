@@ -22,5 +22,27 @@
   C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-2.dll
   C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-d-2.dll
   11 fichier(s) copié(s)
+  TextureManager.cpp
+  StaticObject.cpp
+  StandartPlateforme.cpp
+  SpriteMaker.cpp
+  Spawner.cpp
   SnailEnemy.cpp
+  Score.cpp
+  Plateform.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\plateform.cpp(46): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\plateform.cpp(48): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\plateform.cpp(50): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+  MoutainDew.cpp
+  Main.cpp
+  Hero.cpp
+  GameLevel.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(7): warning C4244: 'argument' : conversion de 'const int' en 'float', perte possible de données
+  Game.cpp
+  FatManEnemy.cpp
+  Enemy.cpp
+  Collectible.cpp
+  Character.cpp
+  BirdEnemy.cpp
+  Génération de code en cours...
   TP2.vcxproj -> C:\Users\Alexandra\Desktop\École\Session A2016\Prog jeu 3\TP2 - Copie\Debug\TP2.exe

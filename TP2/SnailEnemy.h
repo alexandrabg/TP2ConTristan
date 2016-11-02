@@ -10,6 +10,6 @@ public:
 	void Move(float);
 private:
 	int life = 10;
-	int speed = SPEED / 10;
+	int speed = SPEED / 100;
 };
 

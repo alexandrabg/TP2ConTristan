@@ -8,6 +8,7 @@ Game::Game() : frameCounter(0)
 	hero = new Hero(textureManager.getHeroSpriteSheet(), IntRect(45,335,127,12));
 	bird = new BirdEnemy(textureManager.getBirdTexture());
 	snail = new SnailEnemy(textureManager.getSnailTexture());
+	man = new FatManEnemy(textureManager.getManTexture());
 }
 
 void Game::init()
@@ -60,6 +61,7 @@ void Game::update()
 	}
 	bird->Move(1);
 	snail->Move(1);
+	man->Move(1);
 	hero->update();
 }
 
@@ -74,6 +76,7 @@ void Game::render()
 	mainWindow.draw(*hero);
 	mainWindow.draw(*bird);
 	mainWindow.draw(*snail);
+	mainWindow.draw(*man);
 	this->mainWindow.display();
 
 }
@@ -93,5 +96,6 @@ int Game::run()
 	delete hero;
 	delete bird;
 	delete snail;
+	delete man;
 	return EXIT_SUCCESS;
 }
