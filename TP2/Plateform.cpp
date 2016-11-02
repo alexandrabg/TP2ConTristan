@@ -15,21 +15,6 @@ Plateform::~Plateform()
 
 void Plateform::OpenFile(ifstream filename)
 {
-	filename.open("Assets\\Platforms.txt");
-	if (!filename)
-	{
-		cout << "Cannot open file" << endl;
-	}
-
-	if (filename)
-	{
-		string coordinate = "";
-		while (filename >> coordinate)
-		{
-			coordinateNumber = ParseCoordinates(coordinate);
-			vectPlateforms.push_back(new StandartPlateforme(textureManager.getPlateformeSS2(), coordinateNumber));
-		}
-	}
 }
 
 Vector2f Plateform::ParseCoordinates(string coordinate)
@@ -46,9 +31,11 @@ Vector2f Plateform::ParseCoordinates(string coordinate)
 	platformCoordinate.x = number;
 	ss >> number;
 	platformCoordinate.y = number;
-	//ss >> number;
-	//platformCoordinate.z = number;
 
 	return platformCoordinate;
 }
 
+vector<StaticObject*> Plateform::getVectPlateform()
+{
+	return vectPlateforms;
+}

@@ -4,7 +4,7 @@ class StandartPlateforme :
 	public StaticObject
 {
 public:
-	StandartPlateforme(Texture&, Vector2f);
+	StandartPlateforme(Texture&, Vector3f);
 	~StandartPlateforme();
 };
 

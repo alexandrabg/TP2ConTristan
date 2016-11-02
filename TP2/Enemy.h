@@ -6,7 +6,6 @@ class Enemy :
 public:
 	Enemy();
 	~Enemy();
-	//virtual void Move(float offset);
 
 private:
 

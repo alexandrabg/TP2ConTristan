@@ -1,5 +1,4 @@
 #pragma once
-#include "SpriteMaker.h"
 #include <SFML/Graphics.hpp>
 #include "Constantes.h"
 

@@ -12,6 +12,7 @@ class Plateform :
 public:
 	Plateform();
 	~Plateform();
+	vector<StaticObject*> getVectPlateform();
 
 private:
 	vector<Vector3f*> tabPlateforms;
