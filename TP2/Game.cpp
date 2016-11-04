@@ -47,18 +47,8 @@ void Game::processInputs()
 void Game::update()
 {
 	hero->setIsOnSolidGround(false);
-	for (vector<StaticObject*>::iterator it = (*gameLevel.getStaticObjects()).begin(); it != (*gameLevel.getStaticObjects()).end(); ++it)
-	{
-		if ((*it)->getIsSolid()
-			&& hero->getPosition().y + hero->getTextureRect().height * 0.2f >= (*it)->getPosition().y - 2 
-			&& hero->getPosition().y + hero->getTextureRect().height * 0.2f < (*it)->getPosition().y
-			&& hero->getPosition().x + hero->getFootSurface().left * 0.2f + hero->getFootSurface().width /* hero->getTextureRect().width*/ * 0.2f >(*it)->getPosition().x
-			&& hero->getPosition().x + hero->getFootSurface().left * 0.2f < (*it)->getPosition().x + (*it)->getTextureRect().width)
-		{
-			hero->setIsOnSolidGround(true);
-			//hero->setPosition(hero->getPosition().x, (*it)->getPosition().y - hero->getTextureRect().height);
-		}
-	}
+	if (gameLevel.checkPlatformCollision(hero))
+		hero->setIsOnSolidGround(true);
 	bird->Move(1);
 	snail->Move(1);
 	man->Move(1);
@@ -73,6 +63,9 @@ void Game::render()
 	{
 		mainWindow.draw(**it);
 	}
+
+	gameLevel.draw(mainWindow);
+
 	mainWindow.draw(*hero);
 	mainWindow.draw(*bird);
 	mainWindow.draw(*snail);

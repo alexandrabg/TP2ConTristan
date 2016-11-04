@@ -18,6 +18,9 @@ public:
 	Texture& getManTexture();
 	Texture& getMtnDewTexture();
 	Texture& getSaleTexture();
+	Texture& getLeftPlatTexture();
+	Texture& getMidPlatTexture();
+	Texture& getRightPlatTexture();
 
 private:
 	Texture bgTexture;
@@ -29,5 +32,8 @@ private:
 	Texture manTexture;
 	Texture mtnDewTexture;
 	Texture saleTexture;
+	Texture leftPlatTexture;
+	Texture rightPlatTexture;
+	Texture midPlatTexture;
 };
 

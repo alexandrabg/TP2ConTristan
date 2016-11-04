@@ -17,6 +17,14 @@ GameLevel::~GameLevel()
 	{
 		delete *it;
 	}
+	for (vector<vector<StaticObject*>*>::iterator it = sizeablePlatforms.begin(); it != sizeablePlatforms.end(); ++it)
+	{
+		for (vector<StaticObject*>::iterator it2 = (**it).begin(); it2 != (**it).end(); ++it2)
+		{
+			delete (*it2);
+		}
+		delete (*it);
+	}
 }
 
 void GameLevel::OpenLevelFile()
@@ -44,9 +52,23 @@ void GameLevel::OpenLevelFile()
 			ss >> coordinates.x;
 			ss >> coordinates.y;
 			ss >> coordinates.z;
-			coordinates.y = 480 - coordinates.y;
+			coordinates.y = 470 - coordinates.y;
 
-			staticObjects.push_back(new StandartPlateforme(textureManager.getPlateformeSS2(), coordinates));
+
+			vector<StaticObject*>* vPlat = new vector<StaticObject*>();
+
+			vPlat->push_back(new StandartPlateforme(textureManager.getLeftPlatTexture(), coordinates));
+			coordinates.z -= 15;
+			vPlat->push_back(new StandartPlateforme(textureManager.getRightPlatTexture(), coordinates, coordinates.z));
+
+			while (coordinates.z > 15)
+			{
+				coordinates.z -= 5;
+				vPlat->push_back(new StandartPlateforme(textureManager.getMidPlatTexture(), coordinates, coordinates.z));
+			}
+
+			sizeablePlatforms.push_back(vPlat);
+
 		}
 	}
 }
@@ -59,4 +81,34 @@ View* GameLevel::getMainView()
 vector<StaticObject*>* GameLevel::getStaticObjects()
 {
 	return pStaticObjects;
+}
+
+void GameLevel::draw(RenderWindow& mainWindow)
+{
+	for (vector<vector<StaticObject*>*>::iterator it = sizeablePlatforms.begin(); it != sizeablePlatforms.end(); ++it)
+	{
+		for (vector<StaticObject*>::iterator it2 = (*it)->begin(); it2 != (*it)->end(); ++it2)
+		{
+			mainWindow.draw(**it2);
+		}
+	}
+}
+
+bool GameLevel::checkPlatformCollision(Hero* hero)
+{
+	for (vector<vector<StaticObject*>*>::iterator it = sizeablePlatforms.begin(); it != sizeablePlatforms.end(); ++it)
+	{
+		for (vector<StaticObject*>::iterator it2 = (**it).begin(); it2 != (**it).end(); ++it2)
+		{
+			if ((*it2)->getIsSolid()
+				&& hero->getPosition().y + hero->getTextureRect().height * 0.2f >= (*it2)->getPosition().y - 2
+				&& hero->getPosition().y + hero->getTextureRect().height * 0.2f <= (*it2)->getPosition().y + 1
+				&& hero->getPosition().x + hero->getFootSurface().left * 0.2f + hero->getFootSurface().width * 0.2f >(*it2)->getPosition().x
+				&& hero->getPosition().x + hero->getFootSurface().left * 0.2f < (*it2)->getPosition().x + (*it2)->getTextureRect().width)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
 }

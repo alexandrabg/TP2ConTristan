@@ -5,6 +5,7 @@
 #include "TextureManager.h"
 #include "StandartPlateforme.h"
 #include "Plateform.h"
+#include "Hero.h"
 
 using namespace sf;
 class GameLevel
@@ -15,9 +16,12 @@ public:
 
 	View* getMainView();
 	vector<StaticObject*>* getStaticObjects();
+	void draw(RenderWindow& mainWindow);
+	bool checkPlatformCollision(Hero* hero);
 
 private:
 	void OpenLevelFile();
+	vector<vector<StaticObject*>*> sizeablePlatforms;
 	vector<StaticObject*> staticObjects;
 	vector<StaticObject*>* pStaticObjects;
 	TextureManager textureManager;

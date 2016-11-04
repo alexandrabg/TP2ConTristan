@@ -5,6 +5,7 @@ class StandartPlateforme :
 {
 public:
 	StandartPlateforme(Texture&, Vector3f);
+	StandartPlateforme(Texture&, Vector3f, int offsetX);
 	~StandartPlateforme();
 };
 

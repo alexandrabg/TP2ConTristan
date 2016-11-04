@@ -13,6 +13,9 @@ TextureManager::TextureManager()
 	manTexture.loadFromFile("Assets\\man.png");
 	mtnDewTexture.loadFromFile("Assets\\mtnDew.png");
 	saleTexture.loadFromFile("Assets\\sale.png");
+	leftPlatTexture.loadFromFile("Assets\\plateformLeft.png");
+	midPlatTexture.loadFromFile("Assets\\platformMiddle.png");
+	rightPlatTexture.loadFromFile("Assets\\platformRight.png");
 }
 
 
@@ -63,6 +66,19 @@ Texture& TextureManager::getMtnDewTexture()
 Texture& TextureManager::getSaleTexture()
 {
 	return saleTexture;
+}
+
+Texture& TextureManager::getLeftPlatTexture()
+{
+	return leftPlatTexture;
+}
+Texture& TextureManager::getRightPlatTexture()
+{
+	return rightPlatTexture;
+}
+Texture& TextureManager::getMidPlatTexture()
+{
+	return midPlatTexture;
 }
 
 
