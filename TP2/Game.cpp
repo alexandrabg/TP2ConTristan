@@ -30,12 +30,22 @@ void Game::processInputs()
 
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
-		gameLevel.getMainView()->move(hero->getSpeed(), 0);
+		if (hero->getPosition().x > LARGEUR / 4
+			&& hero->getPosition().x < 2000)
+		{
+			gameLevel.getMainView()->move((hero->getSpeed()), 0);
+			(*(*gameLevel.getStaticObjects()).begin())->move(hero->getSpeed()/2, 0);
+		}
 		hero->move(1, 0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::A))
 	{
-		gameLevel.getMainView()->move(-(hero->getSpeed()), 0);
+		if (hero->getPosition().x > LARGEUR / 4
+			&& hero->getPosition().x < 2000)
+		{
+			gameLevel.getMainView()->move(-(hero->getSpeed()), 0);
+			(*(*gameLevel.getStaticObjects()).begin())->move(-hero->getSpeed()/2, 0);
+		}
 		hero->move(-1, 0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Space))

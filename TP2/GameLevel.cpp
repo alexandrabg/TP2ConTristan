@@ -21,9 +21,9 @@ GameLevel::~GameLevel()
 	{
 		for (vector<StaticObject*>::iterator it2 = (**it).begin(); it2 != (**it).end(); ++it2)
 		{
-			delete (*it2);
+			delete *it2;
 		}
-		delete (*it);
+		delete *it;
 	}
 }
 
