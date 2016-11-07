@@ -6,6 +6,7 @@
 #include "StandartPlateforme.h"
 #include "Plateform.h"
 #include "Hero.h"
+#include "MoutainDew.h"
 
 using namespace sf;
 class GameLevel
@@ -25,7 +26,8 @@ private:
 	vector<StaticObject*> staticObjects;
 	vector<StaticObject*>* pStaticObjects;
 	TextureManager textureManager;
-
+	vector<StaticObject*>* vMtnDew;
+	vector<StaticObject*>* vSale;
 	View* mainView;
 };
 

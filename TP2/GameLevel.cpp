@@ -1,4 +1,5 @@
 #include "GameLevel.h"
+#include "SteamSale.h"
 
 
 GameLevel::GameLevel()
@@ -6,6 +7,8 @@ GameLevel::GameLevel()
 	pStaticObjects = &staticObjects;
 	mainView = new View(FloatRect(0, 0, LARGEUR, HAUTEUR));
 	staticObjects.push_back(new StaticObject(textureManager.getBgTexture(), IntRect(0,0,0,0), false));
+	vSale = new vector<StaticObject*>;
+	vMtnDew = new vector<StaticObject*>;
 	OpenLevelFile();
 }
 
@@ -25,13 +28,23 @@ GameLevel::~GameLevel()
 		}
 		delete *it;
 	}
+	for (vector<StaticObject*>::iterator it = vSale->begin(); it != vSale->end(); ++it)
+	{
+		delete *it;
+	}
+	for (vector<StaticObject*>::iterator it = vMtnDew->begin(); it != vMtnDew->end(); ++it)
+	{
+		delete *it;
+	}
 }
 
 void GameLevel::OpenLevelFile()
 {
 	ifstream filename;
+	ifstream filename2;
 	filename.open("Assets\\Platforms.txt");
-	if (!filename)
+	filename2.open("Assets\\sale.txt");
+	if (!filename || !filename2)
 	{
 		cout << "Cannot open file" << endl;
 	}
@@ -68,9 +81,30 @@ void GameLevel::OpenLevelFile()
 			}
 
 			sizeablePlatforms.push_back(vPlat);
-
 		}
 	}
+	if (filename2)
+	{
+		string coordinate = "";
+		while (filename2 >> coordinate)
+		{
+			for (size_t i = 0; i < strlen(coordinate.c_str()); i++)
+			{
+				if (coordinate[i] == ',')
+					coordinate[i] = ' ';
+			}
+			stringstream ss(coordinate);
+
+			Vector2f coordinates;
+			ss >> coordinates.x;
+			ss >> coordinates.y;
+			coordinates.y = 470 - coordinates.y;
+
+			vSale->push_back(new SteamSale(textureManager.getSaleTexture(), coordinates.x, coordinates.y));
+		}
+	}
+	vMtnDew->push_back(new MoutainDew(textureManager.getMtnDewTexture(), 950, 390));
+	vMtnDew->push_back(new MoutainDew(textureManager.getMtnDewTexture(), 1740, 160));
 }
 
 View* GameLevel::getMainView()
@@ -91,6 +125,14 @@ void GameLevel::draw(RenderWindow& mainWindow)
 		{
 			mainWindow.draw(**it2);
 		}
+	}
+	for (vector<StaticObject*>::iterator it = vSale->begin(); it != vSale->end(); ++it)
+	{
+		mainWindow.draw(**it);
+	}
+	for (vector<StaticObject*>::iterator it = vMtnDew->begin(); it != vMtnDew->end(); ++it)
+	{
+		mainWindow.draw(**it);
 	}
 }
 

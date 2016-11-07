@@ -16,6 +16,7 @@ TextureManager::TextureManager()
 	leftPlatTexture.loadFromFile("Assets\\plateformLeft.png");
 	midPlatTexture.loadFromFile("Assets\\platformMiddle.png");
 	rightPlatTexture.loadFromFile("Assets\\platformRight.png");
+	cheetosTexture.loadFromFile("Assets\\cheetos.png");
 }
 
 
@@ -81,5 +82,9 @@ Texture& TextureManager::getMidPlatTexture()
 	return midPlatTexture;
 }
 
+Texture& TextureManager::getCheetosTexture()
+{
+	return cheetosTexture;
+}
 
 

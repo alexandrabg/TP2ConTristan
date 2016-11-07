@@ -1,9 +1,10 @@
 #pragma once
 #include "Collectible.h"
-class MoutainDew
+
+class MoutainDew :public StaticObject
 {
 public:
-	MoutainDew();
+	MoutainDew(Texture& texture, int positionX, int positionY);
 	~MoutainDew();
 };
 

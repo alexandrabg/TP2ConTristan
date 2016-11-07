@@ -6,6 +6,7 @@ class FatManEnemy :
 	public Enemy
 {
 public:
+	FatManEnemy();
 	FatManEnemy(Texture& texture);
 	~FatManEnemy();
 	void Move(float);

@@ -87,41 +87,53 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BirdEnemy.cpp" />
+    <ClCompile Include="BirdFactory.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Collectible.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyFactory.cpp" />
     <ClCompile Include="FatManEnemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLevel.cpp" />
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ManFactory.cpp" />
     <ClCompile Include="MoutainDew.cpp" />
     <ClCompile Include="Plateform.cpp" />
+    <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="SnailEnemy.cpp" />
+    <ClCompile Include="SnailFactory.cpp" />
     <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="StandartPlateforme.cpp" />
     <ClCompile Include="StaticObject.cpp" />
+    <ClCompile Include="SteamSale.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BirdEnemy.h" />
+    <ClInclude Include="BirdFactory.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Collectible.h" />
     <ClInclude Include="Constantes.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyFactory.h" />
     <ClInclude Include="FatManEnemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameLevel.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="ManFactory.h" />
     <ClInclude Include="MoutainDew.h" />
     <ClInclude Include="Plateform.h" />
+    <ClInclude Include="Projectile.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="SnailEnemy.h" />
+    <ClInclude Include="SnailFactory.h" />
     <ClInclude Include="Spawner.h" />
     <ClInclude Include="StandartPlateforme.h" />
     <ClInclude Include="StaticObject.h" />
+    <ClInclude Include="SteamSale.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +144,7 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
     <Image Include="Assets\TikiRossBG.png" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Assets\sale.txt" />
     <Text Include="Levels\Platforms.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

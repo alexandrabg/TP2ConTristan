@@ -1,5 +1,8 @@
 #pragma once
 #include "Character.h"
+#include "Projectile.h"
+#include "TextureManager.h"
+
 class Hero :
 	public Character
 {
@@ -11,6 +14,7 @@ public:
 	void update();
 	void setIsOnSolidGround(bool);
 	void Jump();
+	void ThrowCheetos();
 	Vector2f getPositionHero() const;
 	void setPositionHero(Vector2f);
 	float getSpeed();
@@ -28,5 +32,7 @@ private:
 	float startingHeight;
 	float endingHeight;
 	Vector2f positionHero;
+	TextureManager* texture;
+	Projectile* proj;
 };
 

@@ -30,8 +30,8 @@ void Game::processInputs()
 
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
-		if (hero->getPosition().x > LARGEUR / 4
-			&& hero->getPosition().x < 2000)
+		if (hero->getPosition().x > LARGEUR / 5
+			&& hero->getPosition().x < 2400)
 		{
 			gameLevel.getMainView()->move((hero->getSpeed()), 0);
 			(*(*gameLevel.getStaticObjects()).begin())->move(hero->getSpeed()/2, 0);
@@ -40,8 +40,8 @@ void Game::processInputs()
 	}
 	if (Keyboard::isKeyPressed(Keyboard::A))
 	{
-		if (hero->getPosition().x > LARGEUR / 4
-			&& hero->getPosition().x < 2000)
+		if (hero->getPosition().x > LARGEUR / 5
+			&& hero->getPosition().x < 2400)
 		{
 			gameLevel.getMainView()->move(-(hero->getSpeed()), 0);
 			(*(*gameLevel.getStaticObjects()).begin())->move(-hero->getSpeed()/2, 0);
@@ -51,6 +51,10 @@ void Game::processInputs()
 	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
 		hero->Jump();
+	}
+	if (Mouse::isButtonPressed(Mouse::Left))
+	{
+		hero->ThrowCheetos();
 	}
 }
 

@@ -21,6 +21,7 @@ public:
 	Texture& getLeftPlatTexture();
 	Texture& getMidPlatTexture();
 	Texture& getRightPlatTexture();
+	Texture& getCheetosTexture();
 
 private:
 	Texture bgTexture;
@@ -35,5 +36,6 @@ private:
 	Texture leftPlatTexture;
 	Texture rightPlatTexture;
 	Texture midPlatTexture;
+	Texture cheetosTexture;
 };
 
