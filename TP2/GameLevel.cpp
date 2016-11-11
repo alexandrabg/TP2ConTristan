@@ -128,7 +128,8 @@ void GameLevel::draw(RenderWindow& mainWindow)
 	}
 	for (vector<StaticObject*>::iterator it = vSale->begin(); it != vSale->end(); ++it)
 	{
-		mainWindow.draw(**it);
+		if (!checkIfCollectCollectibles(hero))
+			mainWindow.draw(**it);
 	}
 	for (vector<StaticObject*>::iterator it = vMtnDew->begin(); it != vMtnDew->end(); ++it)
 	{
@@ -154,3 +155,20 @@ bool GameLevel::checkPlatformCollision(Hero* hero)
 	}
 	return false;
 }
+
+bool GameLevel::checkIfCollectCollectibles(Hero* hero)
+{
+	for (vector<StaticObject*>::iterator it = vSale->begin(); it != vSale->end(); ++it)
+	{
+		if (hero->getPosition().y + hero->getTextureRect().height * 0.2f >= (*it)->getPosition().y - 2 &&
+			hero->getPosition().y + hero->getTextureRect().height * 0.2f <= (*it)->getPosition().y + 1/*&&
+			hero->getPosition().x + hero->getFootSurface().left * 0.2f + hero->getFootSurface().width * 0.2f > (*it)->getPosition().x &&
+			hero->getPosition().x + hero->getFootSurface().left * 0.2f < (*it)->getPosition().x + (*it)->getTextureRect().width*/)
+		{
+			score->AddScore();
+			return true;
+		}
+	}
+	return false;
+}
+

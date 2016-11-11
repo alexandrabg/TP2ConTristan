@@ -7,6 +7,7 @@
 #include "Plateform.h"
 #include "Hero.h"
 #include "MoutainDew.h"
+#include "Score.h"
 
 using namespace sf;
 class GameLevel
@@ -19,6 +20,7 @@ public:
 	vector<StaticObject*>* getStaticObjects();
 	void draw(RenderWindow& mainWindow);
 	bool checkPlatformCollision(Hero* hero);
+	bool checkIfCollectCollectibles(Hero* hero);
 
 private:
 	void OpenLevelFile();
@@ -29,5 +31,7 @@ private:
 	vector<StaticObject*>* vMtnDew;
 	vector<StaticObject*>* vSale;
 	View* mainView;
+	Hero* hero;
+	Score* score;
 };
 

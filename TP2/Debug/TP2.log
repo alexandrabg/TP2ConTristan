@@ -22,6 +22,11 @@
   C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-2.dll
   C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-d-2.dll
   11 fichier(s) copié(s)
-  Hero.cpp
-c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\hero.cpp(57): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+  GameLevel.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(8): warning C4244: 'argument' : conversion de 'const int' en 'float', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(75): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(80): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(103): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+  Game.cpp
+  Génération de code en cours...
   TP2.vcxproj -> C:\Users\Alexandra\Desktop\École\Session A2016\Prog jeu 3\TP2 - Copie\Debug\TP2.exe

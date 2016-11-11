@@ -101,6 +101,7 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
     <ClCompile Include="MoutainDew.cpp" />
     <ClCompile Include="Plateform.cpp" />
     <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="Randomizer.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="SnailEnemy.cpp" />
     <ClCompile Include="SnailFactory.cpp" />
@@ -126,6 +127,7 @@ xcopy /Y /C /E  "$(SFML_ROOT)\bin" "..\Release\"</Command>
     <ClInclude Include="MoutainDew.h" />
     <ClInclude Include="Plateform.h" />
     <ClInclude Include="Projectile.h" />
+    <ClInclude Include="Randomizer.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="SnailEnemy.h" />
