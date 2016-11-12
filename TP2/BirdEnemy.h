@@ -5,8 +5,7 @@ class BirdEnemy :
 	public Enemy
 {
 public:
-	BirdEnemy();
-	BirdEnemy(Texture&);
+	BirdEnemy(Texture&, Vector2f pos);
 	~BirdEnemy();
 	virtual void Move(float);
 private:

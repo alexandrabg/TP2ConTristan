@@ -6,8 +6,7 @@ class FatManEnemy :
 	public Enemy
 {
 public:
-	FatManEnemy();
-	FatManEnemy(Texture& texture);
+	FatManEnemy(Texture& texture, Vector2f pos);
 	~FatManEnemy();
 	void Move(float);
 private:

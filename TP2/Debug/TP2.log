@@ -1,4 +1,4 @@
-﻿La génération a démarré 11/11/2016 9:54:30 PM.
+﻿La génération a démarré 11/11/2016 11:31:43 PM.
      1>Projet "D:\Programmation\TP2ConTristan\TP2\TP2.vcxproj" sur le nœud 2 (Build cible(s)).
      1>PreBuildEvent:
          xcopy /Y /C /E  "D:\Programmation\Librairies\SFML-2.4.0\bin" "..\Debug\"
@@ -28,6 +28,13 @@
          D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-window-2.dll
          D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-window-d-2.dll
          11 File(s) copied
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp EnemyFactory.cpp
+         EnemyFactory.cpp
+         Enemy.cpp
+     1>d:\programmation\tp2contristan\tp2\enemy.cpp(17): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+         Génération de code en cours...
+     1>d:\programmation\tp2contristan\tp2\enemyfactory.cpp(25): warning C4715: 'EnemyFactory::CreateEnemyType' : les chemins de contrôle ne retournent pas tous une valeur
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programmation\TP2ConTristan\Debug\TP2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" "sfml-system-d.lib" "sfml-main-d.lib" "sfml-graphics-d.lib" "sfml-audio-d.lib" "sfml-network-d.lib" "sfml-window-d.lib" openal32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Programmation\TP2ConTristan\Debug\TP2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programmation\TP2ConTristan\Debug\TP2.lib" /MACHINE:X86 Debug\BirdEnemy.obj
          Debug\BirdFactory.obj
@@ -58,4 +65,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.42
+Temps écoulé 00:00:01.05

@@ -12,5 +12,5 @@ ManFactory::~ManFactory()
 
 FatManEnemy* ManFactory::CreateMan()
 {
-	return new FatManEnemy(texture.getManTexture());
+	return new FatManEnemy(texture.getManTexture(), Vector2f(0,0));
 }

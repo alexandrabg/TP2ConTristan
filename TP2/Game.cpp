@@ -6,9 +6,6 @@ Game::Game() : frameCounter(0)
 {
 	this->mainWindow.create(VideoMode(LARGEUR, HAUTEUR, 32), "Projet SFML C++");
 	hero = gameLevel.gameLevelInit();
-	bird = new BirdEnemy(textureManager.getBirdTexture());
-	snail = new SnailEnemy(textureManager.getSnailTexture());
-	man = new FatManEnemy(textureManager.getManTexture());
 }
 
 void Game::init()
@@ -63,11 +60,8 @@ void Game::update()
 	hero->setIsOnSolidGround(false);
 	if (gameLevel.checkPlatformCollision(hero))
 		hero->setIsOnSolidGround(true);
-	bird->Move(1);
-	snail->Move(1);
-	man->Move(1);
 	hero->update();
-	gameLevel.updateCheetos();
+	gameLevel.update();
 }
 
 void Game::render()
@@ -82,9 +76,6 @@ void Game::render()
 	gameLevel.draw(mainWindow);
 
 	mainWindow.draw(*hero);
-	mainWindow.draw(*bird);
-	mainWindow.draw(*snail);
-	mainWindow.draw(*man);
 	this->mainWindow.display();
 
 }
@@ -100,9 +91,5 @@ int Game::run()
 		this->update();
 		this->render();		
 	}
-
-	delete bird;
-	delete snail;
-	delete man;
 	return EXIT_SUCCESS;
 }

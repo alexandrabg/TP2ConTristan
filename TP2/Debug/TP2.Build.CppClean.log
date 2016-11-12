@@ -4,8 +4,6 @@ d:\programmation\tp2contristan\tp2\debug\enemy.obj
 d:\programmation\tp2contristan\tp2\debug\enemyfactory.obj
 d:\programmation\tp2contristan\tp2\debug\fatmanenemy.obj
 d:\programmation\tp2contristan\tp2\debug\game.obj
-d:\programmation\tp2contristan\tp2\debug\gamelevel.obj
-d:\programmation\tp2contristan\tp2\debug\hero.obj
 d:\programmation\tp2contristan\tp2\debug\main.obj
 d:\programmation\tp2contristan\tp2\debug\manfactory.obj
 d:\programmation\tp2contristan\tp2\debug\moutaindew.obj
@@ -24,12 +22,16 @@ d:\programmation\tp2contristan\tp2\debug\birdenemy.obj
 d:\programmation\tp2contristan\tp2\debug\birdfactory.obj
 d:\programmation\tp2contristan\tp2\debug\character.obj
 d:\programmation\tp2contristan\tp2\debug\collectible.obj
+d:\programmation\tp2contristan\tp2\debug\hero.obj
+d:\programmation\tp2contristan\tp2\debug\gamelevel.obj
 d:\programmation\tp2contristan\debug\tp2.pdb
-d:\programmation\tp2contristan\debug\tp2.exe
-d:\programmation\tp2contristan\debug\tp2.ilk
 d:\programmation\tp2contristan\tp2\debug\tp2.tlog\cl.command.1.tlog
 d:\programmation\tp2contristan\tp2\debug\tp2.tlog\cl.read.1.tlog
 d:\programmation\tp2contristan\tp2\debug\tp2.tlog\cl.write.1.tlog
+d:\programmation\tp2contristan\tp2\debug\tp2.tlog\link-cvtres.read.1.tlog
+d:\programmation\tp2contristan\tp2\debug\tp2.tlog\link-cvtres.write.1.tlog
+d:\programmation\tp2contristan\tp2\debug\tp2.tlog\link-rc.read.1.tlog
+d:\programmation\tp2contristan\tp2\debug\tp2.tlog\link-rc.write.1.tlog
 d:\programmation\tp2contristan\tp2\debug\tp2.tlog\link.command.1.tlog
 d:\programmation\tp2contristan\tp2\debug\tp2.tlog\link.read.1.tlog
 d:\programmation\tp2contristan\tp2\debug\tp2.tlog\link.write.1.tlog

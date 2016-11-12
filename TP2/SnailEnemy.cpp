@@ -1,15 +1,10 @@
 #include "SnailEnemy.h"
 
 
-SnailEnemy::SnailEnemy()
-{
-}
-
-SnailEnemy::SnailEnemy(Texture& texture)
+SnailEnemy::SnailEnemy(Texture& texture, Vector2f pos) : Enemy(pos)
 {
 	this->setTexture(texture);
 	this->setScale(0.03f, 0.03f);
-	this->setPosition(480, 30);
 }
 
 void SnailEnemy::Move(float offsetX)

@@ -1,16 +1,11 @@
 #include "BirdEnemy.h"
 
 
-BirdEnemy::BirdEnemy() :Enemy()
-{
-	
-}
 
-BirdEnemy::BirdEnemy(Texture& texture)
+BirdEnemy::BirdEnemy(Texture& texture, Vector2f pos) : Enemy(pos)
 {
 	this->setTexture(texture);
 	this->setScale(0.15f, 0.15f);
-	this->setPosition(0, 30);
 }
 
 void BirdEnemy::Move(float offsetX)

@@ -12,5 +12,5 @@ SnailFactory::~SnailFactory()
 
 SnailEnemy* SnailFactory::CreateSnail()
 {
-	return new SnailEnemy(texture->getSnailTexture());
+	return new SnailEnemy(texture->getSnailTexture(), Vector2f(0,0));
 }

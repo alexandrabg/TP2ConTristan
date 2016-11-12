@@ -2,10 +2,11 @@
 #include <math.h>
 
 Hero::Hero(Texture& newTexture, IntRect foot) :
-Character(), speed(2), isJumping(false), isStillJumping(false), jumpingFrameCounter(999), jumpingSpeed(3), fallingSpeed(3), jumpHeight(60), footSurface(foot)
+Character(foot), speed(2), isJumping(false), isStillJumping(false), jumpingFrameCounter(999), jumpingSpeed(3), jumpHeight(60), attackSpeed(60)
 {
 	this->setTexture(newTexture);
 	this->setScale(0.2f, 0.2f);
+	this->fallingSpeed = 3;
 }
 
 Hero::~Hero()
@@ -41,6 +42,11 @@ void Hero::update()
 	}
 }
 
+int Hero::getAS()
+{
+	return attackSpeed;
+}
+
 Vector2f Hero::getPositionHero() const
 {
 	return positionHero;
@@ -51,10 +57,6 @@ void Hero::setPositionHero(Vector2f positionHero)
 	this->positionHero = positionHero;
 }
 
-void Hero::setIsOnSolidGround(bool isItOnSolidGround)
-{
-	isOnSolidGround = isItOnSolidGround;
-}
 
 void Hero::Jump()
 {
@@ -72,7 +74,3 @@ float Hero::getSpeed()
 	return speed;
 }
 
-IntRect& Hero::getFootSurface()
-{
-	return footSurface;
-}

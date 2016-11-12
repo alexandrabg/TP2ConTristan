@@ -8,6 +8,8 @@
 #include "Hero.h"
 #include "MoutainDew.h"
 #include "Score.h"
+#include "Enemy.h"
+#include "EnemyFactory.h"
 
 using namespace sf;
 class GameLevel
@@ -19,11 +21,13 @@ public:
 	View* getMainView();
 	vector<StaticObject*>* getStaticObjects();
 	void draw(RenderWindow& mainWindow);
-	bool checkPlatformCollision(Hero* hero);
+	bool checkPlatformCollision(Character* hero);
 	bool checkIfCollectCollectibles(Hero* hero);
 	Hero* gameLevelInit();
 	void throwCheetos(Hero*);
 	void updateCheetos();
+	void update();
+	void updateEnemies();
 
 private:
 	void OpenLevelFile();
@@ -37,5 +41,8 @@ private:
 	Hero* hero;
 	Score* score;
 	vector<Projectile*>* pProjectiles;
+	vector<Enemy*>* pEnemies;
+	int compteurProjectile;
+	EnemyFactory enemyFactory;
 };
 

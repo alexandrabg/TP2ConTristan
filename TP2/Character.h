@@ -9,11 +9,17 @@ class Character :
 {
 public:
 	Character();
+	Character(IntRect);
 	~Character();
+
+	void setIsOnSolidGround(bool);
+	IntRect& getFootSurface();
 
 private:
 protected:
 	bool isOnSolidGround;
+	float fallingSpeed;
+	IntRect footSurface;
 
 };
 

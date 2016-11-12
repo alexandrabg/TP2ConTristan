@@ -10,11 +10,10 @@ enum EnemyType;
 class EnemyFactory
 {
 public:
-	enum EnemyType{Bird, Snail, Man};
+	EnemyFactory();
 	~EnemyFactory();
-	Enemy* CreateEnemyType(EnemyType type);
+	Enemy* CreateEnemyType(int type, Vector2f pos);
 private:
 	TextureManager texture;
-	EnemyFactory();
 };
 

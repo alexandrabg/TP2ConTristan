@@ -12,18 +12,15 @@ public:
 	
 	void move(float offsetX, float offsetY);
 	void update();
-	void setIsOnSolidGround(bool);
 	void Jump();
 	Vector2f getPositionHero() const;
 	void setPositionHero(Vector2f);
 	float getSpeed();
-	IntRect& getFootSurface();
+	int getAS();
 
 private:
-	IntRect footSurface;
 	int jumpHeight;
 	float jumpingSpeed;
-	float fallingSpeed;
 	int jumpingFrameCounter;
 	bool isJumping;
 	bool isStillJumping;
@@ -33,5 +30,6 @@ private:
 	Vector2f positionHero;
 	TextureManager* texture;
 	Projectile* proj;
+	int attackSpeed;
 };
 

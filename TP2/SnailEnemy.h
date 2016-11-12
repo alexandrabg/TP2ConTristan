@@ -4,8 +4,7 @@ class SnailEnemy :
 	public Enemy
 {
 public:
-	SnailEnemy();
-	SnailEnemy(Texture&);
+	SnailEnemy(Texture&, Vector2f pos);
 	~SnailEnemy();
 	void Move(float);
 private:

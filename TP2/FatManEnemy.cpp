@@ -2,11 +2,10 @@
 #include "Constantes.h"
 
 
-FatManEnemy::FatManEnemy(Texture& texture)
+FatManEnemy::FatManEnemy(Texture& texture, Vector2f pos) : Enemy(pos)
 {
 	this->setTexture(texture);
 	this->setScale(0.3f, 0.3f);
-	this->setPosition(30, 80);
 }
 
 

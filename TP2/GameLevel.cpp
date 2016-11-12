@@ -2,7 +2,7 @@
 #include "SteamSale.h"
 
 
-GameLevel::GameLevel()
+GameLevel::GameLevel() : compteurProjectile(60)
 {
 	pStaticObjects = &staticObjects;
 	mainView = new View(FloatRect(0, 0, LARGEUR, HAUTEUR));
@@ -10,6 +10,7 @@ GameLevel::GameLevel()
 	vSale = new vector<StaticObject*>;
 	vMtnDew = new vector<StaticObject*>;
 	score = new Score();
+	pEnemies = new vector<Enemy*>;
 	OpenLevelFile();
 	pProjectiles = new vector<Projectile*>;
 }
@@ -44,12 +45,34 @@ GameLevel::~GameLevel()
 	{
 		delete *it;
 	}
+	for (vector<Enemy*>::iterator it = pEnemies->begin(); it != pEnemies->end(); ++it)
+	{
+		delete *it;
+	}
 }
 
 Hero* GameLevel::gameLevelInit()
 {
 	this->hero = new Hero(textureManager.getHeroSpriteSheet(), IntRect(45, 335, 127, 12));
 	return this->hero;
+}
+
+void GameLevel::update()
+{
+	compteurProjectile++;
+	updateCheetos();
+	updateEnemies();
+}
+
+void GameLevel::updateEnemies()
+{
+	for (vector<Enemy*>::iterator it = pEnemies->begin(); it != pEnemies->end(); ++it)
+	{
+		(*it)->setIsOnSolidGround(false);
+		if (checkPlatformCollision(*it))
+			(*it)->setIsOnSolidGround(true);
+		(*it)->update();
+	}
 }
 
 void GameLevel::OpenLevelFile()
@@ -79,8 +102,15 @@ void GameLevel::OpenLevelFile()
 			ss >> coordinates.x;
 			ss >> coordinates.y;
 			ss >> coordinates.z;
+			int enemyType = 0;
+			ss >> enemyType;
 			coordinates.y = 470 - coordinates.y;
 
+			if (enemyType != 0)
+			{
+				enemyType -= 1;
+				pEnemies->push_back(enemyFactory.CreateEnemyType(enemyType, Vector2f(coordinates.x, coordinates.y)));
+			}
 
 			vector<StaticObject*>* vPlat = new vector<StaticObject*>();
 
@@ -153,9 +183,13 @@ void GameLevel::draw(RenderWindow& mainWindow)
 	{
 		mainWindow.draw(**it);
 	}
+	for (vector<Enemy*>::iterator it = pEnemies->begin(); it != pEnemies->end(); ++it)
+	{
+		mainWindow.draw(**it);
+	}
 }
 
-bool GameLevel::checkPlatformCollision(Hero* hero)
+bool GameLevel::checkPlatformCollision(Character* hero)
 {
 	for (vector<vector<StaticObject*>*>::iterator it = sizeablePlatforms.begin(); it != sizeablePlatforms.end(); ++it)
 	{
@@ -197,7 +231,11 @@ bool GameLevel::checkIfCollectCollectibles(Hero* hero)
 
 void GameLevel::throwCheetos(Hero* hero)
 {
-	pProjectiles->push_back(new Projectile(textureManager.getCheetosTexture(), hero->getPosition().x, hero->getPosition().y));
+	if (compteurProjectile > hero->getAS())
+	{
+		compteurProjectile = 0;
+		pProjectiles->push_back(new Projectile(textureManager.getCheetosTexture(), hero->getPosition().x, hero->getPosition().y));
+	}
 }
 
 void GameLevel::updateCheetos()
