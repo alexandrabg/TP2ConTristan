@@ -5,7 +5,7 @@ using namespace sf;
 class Projectile: public Sprite
 {
 public:
-	Projectile(Texture& texture, int positionX, int positionY);
+	Projectile(const Texture& texture, const int positionX, const int positionY);
 	~Projectile();
 
 	int getSpeed();

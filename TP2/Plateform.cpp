@@ -17,6 +17,11 @@ void Plateform::OpenFile(ifstream filename)
 {
 }
 
+/// <summary>
+/// Permet de retrouver les coordonnées de la plateforme à partir du fichier texte.
+/// </summary>
+/// <param name="coordinate">La coordonnée sous forme de string.</param>
+/// <returns></returns>
 Vector2f Plateform::ParseCoordinates(string coordinate)
 {
 	for (size_t i = 0; i < strlen(coordinate.c_str()); i++)

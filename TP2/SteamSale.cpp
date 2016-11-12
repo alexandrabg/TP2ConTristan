@@ -1,7 +1,7 @@
 #include "SteamSale.h"
 
 
-SteamSale::SteamSale(Texture& texture, int positionX, int positionY)
+SteamSale::SteamSale(const Texture& texture, const int positionX, const int positionY)
 {
 	this->setTexture(texture);
 	this->setPosition(positionX, positionY);

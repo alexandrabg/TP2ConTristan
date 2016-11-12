@@ -25,6 +25,7 @@ void Game::processInputs()
 		}
 	}
 
+	//Fait avancer la vue vers la droite, pour donner l'impression que le héros bouge vers la gauche
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
 		if (hero->getPosition().x > LARGEUR / 5
@@ -35,6 +36,8 @@ void Game::processInputs()
 		}
 		hero->move(1, 0);
 	}
+
+	//Fait avancer la vue vers la gauche pour donner l'impression que le héros bouge vers la droite
 	if (Keyboard::isKeyPressed(Keyboard::A))
 	{
 		if (hero->getPosition().x > LARGEUR / 5

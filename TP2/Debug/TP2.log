@@ -1,68 +1,66 @@
-﻿La génération a démarré 11/11/2016 11:31:43 PM.
-     1>Projet "D:\Programmation\TP2ConTristan\TP2\TP2.vcxproj" sur le nœud 2 (Build cible(s)).
-     1>PreBuildEvent:
-         xcopy /Y /C /E  "D:\Programmation\Librairies\SFML-2.4.0\bin" "..\Debug\"
-         xcopy /Y /C /E  "D:\Programmation\Librairies\SFML-2.4.0\bin" "..\Release\"
-         :VCEnd
-         D:\Programmation\Librairies\SFML-2.4.0\bin\openal32.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-audio-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-audio-d-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-graphics-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-graphics-d-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-network-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-network-d-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-system-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-system-d-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-window-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-window-d-2.dll
-         11 File(s) copied
-         D:\Programmation\Librairies\SFML-2.4.0\bin\openal32.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-audio-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-audio-d-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-graphics-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-graphics-d-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-network-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-network-d-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-system-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-system-d-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-window-2.dll
-         D:\Programmation\Librairies\SFML-2.4.0\bin\sfml-window-d-2.dll
-         11 File(s) copied
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp EnemyFactory.cpp
-         EnemyFactory.cpp
-         Enemy.cpp
-     1>d:\programmation\tp2contristan\tp2\enemy.cpp(17): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-         Génération de code en cours...
-     1>d:\programmation\tp2contristan\tp2\enemyfactory.cpp(25): warning C4715: 'EnemyFactory::CreateEnemyType' : les chemins de contrôle ne retournent pas tous une valeur
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programmation\TP2ConTristan\Debug\TP2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" "sfml-system-d.lib" "sfml-main-d.lib" "sfml-graphics-d.lib" "sfml-audio-d.lib" "sfml-network-d.lib" "sfml-window-d.lib" openal32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Programmation\TP2ConTristan\Debug\TP2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programmation\TP2ConTristan\Debug\TP2.lib" /MACHINE:X86 Debug\BirdEnemy.obj
-         Debug\BirdFactory.obj
-         Debug\Character.obj
-         Debug\Collectible.obj
-         Debug\Enemy.obj
-         Debug\EnemyFactory.obj
-         Debug\FatManEnemy.obj
-         Debug\Game.obj
-         Debug\GameLevel.obj
-         Debug\Hero.obj
-         Debug\Main.obj
-         Debug\ManFactory.obj
-         Debug\MoutainDew.obj
-         Debug\Plateform.obj
-         Debug\Projectile.obj
-         Debug\Randomizer.obj
-         Debug\Score.obj
-         Debug\SnailEnemy.obj
-         Debug\SnailFactory.obj
-         Debug\Spawner.obj
-         Debug\StandartPlateforme.obj
-         Debug\StaticObject.obj
-         Debug\SteamSale.obj
-         Debug\TextureManager.obj
-         TP2.vcxproj -> D:\Programmation\TP2ConTristan\Debug\TP2.exe
-     1>Génération du projet "D:\Programmation\TP2ConTristan\TP2\TP2.vcxproj" terminée (Build cible(s)).
-
-La génération a réussi.
-
-Temps écoulé 00:00:01.05
+﻿  C:\LibrairiesProgrammation\SFML-2.4.0\bin\openal32.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-audio-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-audio-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-graphics-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-graphics-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-network-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-network-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-system-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-system-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-d-2.dll
+  11 fichier(s) copié(s)
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\openal32.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-audio-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-audio-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-graphics-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-graphics-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-network-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-network-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-system-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-system-d-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-2.dll
+  C:\LibrairiesProgrammation\SFML-2.4.0\bin\sfml-window-d-2.dll
+  11 fichier(s) copié(s)
+  TextureManager.cpp
+  SteamSale.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\steamsale.cpp(7): warning C4244: 'argument' : conversion de 'const int' en 'float', perte possible de données
+  StaticObject.cpp
+  StandartPlateforme.cpp
+  Spawner.cpp
+  SnailFactory.cpp
+  SnailEnemy.cpp
+  Score.cpp
+  Randomizer.cpp
+  Projectile.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\projectile.cpp(6): warning C4244: 'argument' : conversion de 'const int' en 'float', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\projectile.cpp(7): warning C4305: 'argument' : troncation de 'double' à 'float'
+  Plateform.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\plateform.cpp(36): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\plateform.cpp(38): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+  MoutainDew.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\moutaindew.cpp(7): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  ManFactory.cpp
+  Main.cpp
+  Hero.cpp
+  GameLevel.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(8): warning C4244: 'argument' : conversion de 'const int' en 'float', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(127): warning C4244: 'argument' : conversion de 'float' en 'const int', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(132): warning C4244: 'argument' : conversion de 'float' en 'const int', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(155): warning C4244: 'argument' : conversion de 'float' en 'const int', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(259): warning C4244: 'argument' : conversion de 'const float' en 'const int', perte possible de données
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\gamelevel.cpp(270): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Game.cpp
+  FatManEnemy.cpp
+  EnemyFactory.cpp
+  Enemy.cpp
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\enemy.cpp(17): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Génération de code en cours...
+c:\users\alexandra\desktop\école\session a2016\prog jeu 3\tp2 - copie\tp2\enemyfactory.cpp(25): warning C4715: 'EnemyFactory::CreateEnemyType' : les chemins de contrôle ne retournent pas tous une valeur
+  Compilation en cours...
+  Collectible.cpp
+  Character.cpp
+  BirdFactory.cpp
+  BirdEnemy.cpp
+  Génération de code en cours...
+  TP2.vcxproj -> C:\Users\Alexandra\Desktop\École\Session A2016\Prog jeu 3\TP2 - Copie\Debug\TP2.exe

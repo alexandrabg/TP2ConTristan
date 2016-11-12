@@ -1,6 +1,6 @@
 #include "Projectile.h"
 
-Projectile::Projectile(Texture& texture, int positionX, int positionY) : speed(2)
+Projectile::Projectile(const Texture& texture, const int positionX, const int positionY) : speed(2)
 {
 	this->setTexture(texture);
 	this->setPosition(positionX, positionY);

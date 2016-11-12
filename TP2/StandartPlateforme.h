@@ -4,8 +4,8 @@ class StandartPlateforme :
 	public StaticObject
 {
 public:
-	StandartPlateforme(Texture&, Vector3f);
-	StandartPlateforme(Texture&, Vector3f, int offsetX);
+	StandartPlateforme(const Texture&, const Vector3f);
+	StandartPlateforme(const Texture&, const Vector3f, const int offsetX);
 	~StandartPlateforme();
 };
 

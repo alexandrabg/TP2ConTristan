@@ -6,9 +6,9 @@ class FatManEnemy :
 	public Enemy
 {
 public:
-	FatManEnemy(Texture& texture, Vector2f pos);
+	FatManEnemy(const Texture& texture, const Vector2f pos);
 	~FatManEnemy();
-	void Move(float);
+	void Move(const float);
 private:
 	int speed = SPEED / 4;
 };

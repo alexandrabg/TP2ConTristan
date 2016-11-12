@@ -5,20 +5,20 @@ Sprite(), isSolid(true)
 {
 }
 
-StaticObject::StaticObject(Texture& newTexture):
+StaticObject::StaticObject(const Texture& newTexture) :
 Sprite(), isSolid(true)
 {
 	this->setTexture(newTexture);
 	hitbox = IntRect(0,0, newTexture.getSize().x, newTexture.getSize().y);
 }
 
-StaticObject::StaticObject(Texture& newTexture, IntRect newHitbox) :
+StaticObject::StaticObject(const Texture& newTexture, const IntRect newHitbox) :
 Sprite(), hitbox(newHitbox), isSolid(true)
 {
 	this->setTexture(newTexture);
 }
 
-StaticObject::StaticObject(Texture& newTexture, IntRect newHitbox, bool isSolid1) :
+StaticObject::StaticObject(const Texture& newTexture, const IntRect newHitbox, const bool isSolid1) :
 Sprite(), hitbox(newHitbox)
 {
 	this->setTexture(newTexture);

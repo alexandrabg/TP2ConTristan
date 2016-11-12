@@ -10,13 +10,13 @@ public:
 	Hero(Texture&, IntRect foot);
 	~Hero();
 	
-	void move(float offsetX, float offsetY);
+	void move(const float offsetX, const float offsetY);
 	void update();
 	void Jump();
 	Vector2f getPositionHero() const;
-	void setPositionHero(Vector2f);
-	float getSpeed();
-	int getAS();
+	void setPositionHero(const Vector2f);
+	float getSpeed() const;
+	int getAS() const;
 
 private:
 	int jumpHeight;

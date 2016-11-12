@@ -4,7 +4,7 @@
 class SteamSale: public StaticObject
 {
 public:
-	SteamSale(Texture& texture, int positionX, int positionY);
+	SteamSale(const Texture& texture, const int positionX, const int positionY);
 	~SteamSale();
 };
 

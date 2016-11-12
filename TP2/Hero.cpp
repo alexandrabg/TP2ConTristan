@@ -13,13 +13,14 @@ Hero::~Hero()
 {
 }
 
-void Hero::move(float offsetX, float offsetY)
+void Hero::move(const float offsetX, const float offsetY)
 {
 	Character::move(offsetX * speed, offsetY);
 }
 
 void Hero::update()
 {
+	// Vérifie si le joueur est en chute libre
 	if (!isOnSolidGround && ( !isJumping || jumpingFrameCounter > jumpHeight) )
 	{
 		Character::move(0, fallingSpeed);
@@ -42,7 +43,7 @@ void Hero::update()
 	}
 }
 
-int Hero::getAS()
+int Hero::getAS() const
 {
 	return attackSpeed;
 }
@@ -52,7 +53,7 @@ Vector2f Hero::getPositionHero() const
 	return positionHero;
 }
 
-void Hero::setPositionHero(Vector2f positionHero)
+void Hero::setPositionHero(const Vector2f positionHero)
 {
 	this->positionHero = positionHero;
 }
@@ -69,7 +70,7 @@ void Hero::Jump()
 	isJumping = true;
 }
 
-float Hero::getSpeed()
+float Hero::getSpeed() const
 {
 	return speed;
 }

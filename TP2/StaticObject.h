@@ -8,9 +8,9 @@ class StaticObject :
 {
 public:
 	StaticObject();
-	StaticObject(Texture&);
-	StaticObject(Texture&, IntRect hitBox);
-	StaticObject(Texture&, IntRect hitBox, bool solid);
+	StaticObject(const Texture&);
+	StaticObject(const Texture&, const IntRect hitBox);
+	StaticObject(const Texture&, const IntRect hitBox, const bool solid);
 	~StaticObject();
 
 	bool getIsSolid();

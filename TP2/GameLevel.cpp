@@ -49,6 +49,10 @@ GameLevel::~GameLevel()
 	{
 		delete *it;
 	}
+	delete pProjectiles;
+	delete pEnemies;
+	delete vSale;
+	delete vMtnDew;
 }
 
 Hero* GameLevel::gameLevelInit()
@@ -75,6 +79,10 @@ void GameLevel::updateEnemies()
 	}
 }
 
+/// <summary>
+/// Permet d'ouvrir les fichiers de texte pour aller lire les informations et stocker 
+/// les informations dans les vecteurs
+/// </summary>
 void GameLevel::OpenLevelFile()
 {
 	ifstream filename;
@@ -189,6 +197,11 @@ void GameLevel::draw(RenderWindow& mainWindow)
 	}
 }
 
+/// <summary>
+/// Permet de vérifier les collisions des plateformes avec le héros.
+/// </summary>
+/// <param name="hero">Les héros</param>
+/// <returns></returns>
 bool GameLevel::checkPlatformCollision(Character* hero)
 {
 	for (vector<vector<StaticObject*>*>::iterator it = sizeablePlatforms.begin(); it != sizeablePlatforms.end(); ++it)
@@ -208,6 +221,11 @@ bool GameLevel::checkPlatformCollision(Character* hero)
 	return false;
 }
 
+/// <summary>
+/// Permet de vérifier si  un collectible a été ramasser par le joueur, si oui, le collectible disparait.
+/// </summary>
+/// <param name="hero">Le héros</param>
+/// <returns></returns>
 bool GameLevel::checkIfCollectCollectibles(Hero* hero)
 {
 	for (vector<StaticObject*>::iterator it = vSale->begin(); it != vSale->end(); ++it)
@@ -229,6 +247,10 @@ bool GameLevel::checkIfCollectCollectibles(Hero* hero)
 	return false;
 }
 
+/// <summary>
+/// Permet de lancer le projectile du héros
+/// </summary>
+/// <param name="hero">Le héros</param>
 void GameLevel::throwCheetos(Hero* hero)
 {
 	if (compteurProjectile > hero->getAS())
@@ -238,6 +260,9 @@ void GameLevel::throwCheetos(Hero* hero)
 	}
 }
 
+/// <summary>
+/// Permet d'updater la position du projectile du héros
+/// </summary>
 void GameLevel::updateCheetos()
 {
 	for (vector<Projectile*>::iterator it = pProjectiles->begin(); it != pProjectiles->end(); ++it)
