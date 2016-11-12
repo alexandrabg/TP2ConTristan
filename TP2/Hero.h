@@ -14,11 +14,10 @@ public:
 	void update();
 	void setIsOnSolidGround(bool);
 	void Jump();
-	void ThrowCheetos();
 	Vector2f getPositionHero() const;
 	void setPositionHero(Vector2f);
 	float getSpeed();
-	IntRect getFootSurface();
+	IntRect& getFootSurface();
 
 private:
 	IntRect footSurface;

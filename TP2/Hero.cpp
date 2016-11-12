@@ -10,7 +10,6 @@ Character(), speed(2), isJumping(false), isStillJumping(false), jumpingFrameCoun
 
 Hero::~Hero()
 {
-	
 }
 
 void Hero::move(float offsetX, float offsetY)
@@ -52,13 +51,6 @@ void Hero::setPositionHero(Vector2f positionHero)
 	this->positionHero = positionHero;
 }
 
-void Hero::ThrowCheetos()
-{
-	proj = new Projectile(texture->getCheetosTexture(), getPositionHero().x, getPositionHero().y);
-	move(1*speed, 0);
-	delete proj;
-}
-
 void Hero::setIsOnSolidGround(bool isItOnSolidGround)
 {
 	isOnSolidGround = isItOnSolidGround;
@@ -80,7 +72,7 @@ float Hero::getSpeed()
 	return speed;
 }
 
-IntRect Hero::getFootSurface()
+IntRect& Hero::getFootSurface()
 {
 	return footSurface;
 }

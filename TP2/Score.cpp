@@ -1,9 +1,8 @@
 #include "Score.h"
 
 
-Score::Score()
+Score::Score() : score(0)
 {
-	score = 0;
 }
 
 

@@ -21,6 +21,9 @@ public:
 	void draw(RenderWindow& mainWindow);
 	bool checkPlatformCollision(Hero* hero);
 	bool checkIfCollectCollectibles(Hero* hero);
+	Hero* gameLevelInit();
+	void throwCheetos(Hero*);
+	void updateCheetos();
 
 private:
 	void OpenLevelFile();
@@ -33,5 +36,6 @@ private:
 	View* mainView;
 	Hero* hero;
 	Score* score;
+	vector<Projectile*>* pProjectiles;
 };
 

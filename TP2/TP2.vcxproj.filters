@@ -181,6 +181,9 @@
     <Image Include="Assets\hero1.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
+    <Image Include="Assets\cheetos.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Levels\Platforms.txt" />

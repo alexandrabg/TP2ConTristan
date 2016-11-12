@@ -5,7 +5,12 @@ using namespace sf;
 class Projectile: public Sprite
 {
 public:
-	Projectile(Texture texture, int positionX, int positionY);
+	Projectile(Texture& texture, int positionX, int positionY);
 	~Projectile();
+
+	int getSpeed();
+
+private:
+	int speed;
 };
 

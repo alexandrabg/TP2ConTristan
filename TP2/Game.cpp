@@ -5,7 +5,7 @@
 Game::Game() : frameCounter(0)
 {
 	this->mainWindow.create(VideoMode(LARGEUR, HAUTEUR, 32), "Projet SFML C++");
-	hero = new Hero(textureManager.getHeroSpriteSheet(), IntRect(45,335,127,12));
+	hero = gameLevel.gameLevelInit();
 	bird = new BirdEnemy(textureManager.getBirdTexture());
 	snail = new SnailEnemy(textureManager.getSnailTexture());
 	man = new FatManEnemy(textureManager.getManTexture());
@@ -54,7 +54,7 @@ void Game::processInputs()
 	}
 	if (Mouse::isButtonPressed(Mouse::Left))
 	{
-		hero->ThrowCheetos();
+		gameLevel.throwCheetos(hero);
 	}
 }
 
@@ -67,6 +67,7 @@ void Game::update()
 	snail->Move(1);
 	man->Move(1);
 	hero->update();
+	gameLevel.updateCheetos();
 }
 
 void Game::render()
@@ -100,7 +101,6 @@ int Game::run()
 		this->render();		
 	}
 
-	delete hero;
 	delete bird;
 	delete snail;
 	delete man;

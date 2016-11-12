@@ -9,7 +9,9 @@ GameLevel::GameLevel()
 	staticObjects.push_back(new StaticObject(textureManager.getBgTexture(), IntRect(0,0,0,0), false));
 	vSale = new vector<StaticObject*>;
 	vMtnDew = new vector<StaticObject*>;
+	score = new Score();
 	OpenLevelFile();
+	pProjectiles = new vector<Projectile*>;
 }
 
 
@@ -36,6 +38,18 @@ GameLevel::~GameLevel()
 	{
 		delete *it;
 	}
+	delete hero;
+	delete score;
+	for (vector<Projectile*>::iterator it = pProjectiles->begin(); it != pProjectiles->end(); ++it)
+	{
+		delete *it;
+	}
+}
+
+Hero* GameLevel::gameLevelInit()
+{
+	this->hero = new Hero(textureManager.getHeroSpriteSheet(), IntRect(45, 335, 127, 12));
+	return this->hero;
 }
 
 void GameLevel::OpenLevelFile()
@@ -135,6 +149,10 @@ void GameLevel::draw(RenderWindow& mainWindow)
 	{
 		mainWindow.draw(**it);
 	}
+	for (vector<Projectile*>::iterator it = pProjectiles->begin(); it != pProjectiles->end(); ++it)
+	{
+		mainWindow.draw(**it);
+	}
 }
 
 bool GameLevel::checkPlatformCollision(Hero* hero)
@@ -160,15 +178,33 @@ bool GameLevel::checkIfCollectCollectibles(Hero* hero)
 {
 	for (vector<StaticObject*>::iterator it = vSale->begin(); it != vSale->end(); ++it)
 	{
+		hero->getPosition();
+		hero->getTextureRect();
+		hero->getFootSurface().left;
+		(*it)->getPosition();
+		(*it)->getTextureRect().height;
 		if (hero->getPosition().y + hero->getTextureRect().height * 0.2f >= (*it)->getPosition().y - 2 &&
-			hero->getPosition().y + hero->getTextureRect().height * 0.2f <= (*it)->getPosition().y + 1/*&&
+			hero->getPosition().y + hero->getTextureRect().height * 0.2f <= (*it)->getPosition().y + 1&&
 			hero->getPosition().x + hero->getFootSurface().left * 0.2f + hero->getFootSurface().width * 0.2f > (*it)->getPosition().x &&
-			hero->getPosition().x + hero->getFootSurface().left * 0.2f < (*it)->getPosition().x + (*it)->getTextureRect().width*/)
+			hero->getPosition().x + hero->getFootSurface().left * 0.2f < (*it)->getPosition().x + (*it)->getTextureRect().width)
 		{
 			score->AddScore();
 			return true;
 		}
 	}
 	return false;
+}
+
+void GameLevel::throwCheetos(Hero* hero)
+{
+	pProjectiles->push_back(new Projectile(textureManager.getCheetosTexture(), hero->getPosition().x, hero->getPosition().y));
+}
+
+void GameLevel::updateCheetos()
+{
+	for (vector<Projectile*>::iterator it = pProjectiles->begin(); it != pProjectiles->end(); ++it)
+	{
+		(*it)->move((*it)->getSpeed() * 1, 0);
+	}
 }
 
